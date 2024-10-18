@@ -1,0 +1,35 @@
+/* Full-screen layout, split into 4 equal parts */
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh; /* Make it fill the viewport */
+    width: 100vw;
+  }
+  
+  .category-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .category-item a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

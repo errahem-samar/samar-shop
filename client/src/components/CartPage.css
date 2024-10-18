@@ -1,0 +1,127 @@
+/* General Layout */
+.cart-page {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cart-items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cart-item {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .cart-item-image {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .cart-item-info {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .cart-item-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Cart Summary and Actions */
+  .cart-summary {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .cart-summary h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .cart-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .clear-cart-button,
+  .complete-order-button,
+  .add-more-products-button {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .clear-cart-button:hover,
+  .complete-order-button:hover,
+  .add-more-products-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .complete-order-button {
+    background-color: #2ecc71;
+  }
+  
+  .complete-order-button:hover {
+    background-color: #27ae60;
+  }
+  
+  .clear-cart-button {
+    background-color: #e74c3c;
+  }
+  
+  .clear-cart-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Empty Cart Message */
+  .cart-page p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .cart-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cart-item-image {
+      margin-bottom: 20px;
+    }
+  
+    .cart-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
