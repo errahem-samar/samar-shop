@@ -4,10 +4,10 @@ import './CategoryList.css';
 
 const CategoryList = () => {
   const categories = [
-    { name: 'Men', path: '/category/men/subcategories', color: '#3498db' },    // Blue
-    { name: 'Women', path: '/category/women/subcategories', color: '#e74c3c' }, // Red
-    { name: 'Boys', path: '/category/boys/subcategories', color: '#2ecc71' },   // Green
-    { name: 'Girls', path: '/category/girls/subcategories', color: '#f39c12' }  // Yellow
+    { name: 'Men', path: '/category/men', color: '#3498db' },    // Blue
+    { name: 'Women', path: '/category/women', color: '#e74c3c' }, // Red
+    { name: 'Boys', path: '/category/boys', color: '#2ecc71' },   // Green
+    { name: 'Girls', path: '/category/girls', color: '#f39c12' }  // Yellow
   ];
 
   return (

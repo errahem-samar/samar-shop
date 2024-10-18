@@ -8,20 +8,20 @@ const SubCategoryList = () => {
   // Subcategories with background images
   const subcategories = {
     men: [
-      { name: 'Shoes', path: `/category/men/subcategories/shoes`, backgroundImage: '/images/men-shoes.jpg' },
-      { name: 'Clothes', path: `/category/men/subcategories/clothes`, backgroundImage: '/images/men-clothes.jpg' },
+      { name: 'Shoes', path: `/category/men/shoes`, backgroundImage: '/images/men-shoes.jpg' },
+      { name: 'Clothes', path: `/category/men/clothes`, backgroundImage: '/images/men-clothes.jpg' },
     ],
     women: [
-      { name: 'Shoes', path: `/category/women/subcategories/shoes`, backgroundImage: '/images/women-shoes.jpg' },
-      { name: 'Clothes', path: `/category/women/subcategories/clothes`, backgroundImage: '/images/women-clothes.jpg' },
+      { name: 'Shoes', path: `/category/women/shoes`, backgroundImage: '/images/women-shoes.jpg' },
+      { name: 'Clothes', path: `/category/women/clothes`, backgroundImage: '/images/women-clothes.jpg' },
     ],
     boys: [
-      { name: 'Shoes', path: `/category/boys/subcategories/shoes`, backgroundImage: '/images/boys-shoes.jpg' },
-      { name: 'Clothes', path: `/category/boys/subcategories/clothes`, backgroundImage: '/images/boys-clothes.jpg' },
+      { name: 'Shoes', path: `/category/boys/shoes`, backgroundImage: '/images/boys-shoes.jpg' },
+      { name: 'Clothes', path: `/category/boys/clothes`, backgroundImage: '/images/boys-clothes.jpg' },
     ],
     girls: [
-      { name: 'Shoes', path: `/category/girls/subcategories/shoes`, backgroundImage: '/images/girls-shoes.jpg' },
-      { name: 'Clothes', path: `/category/girls/subcategories/clothes`, backgroundImage: '/images/girls-clothes.jpg' },
+      { name: 'Shoes', path: `/category/girls/shoes`, backgroundImage: '/images/girls-shoes.jpg' },
+      { name: 'Clothes', path: `/category/girls/clothes`, backgroundImage: '/images/girls-clothes.jpg' },
     ],
   };
 

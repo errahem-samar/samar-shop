@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProductList.css';
+import { Link, useParams } from 'react-router-dom';
 
 const ProductList = () => {
   const products = [
@@ -24,13 +25,16 @@ const ProductList = () => {
   return (
     <div className="product-grid">
       {products.map((product) => (
+          <Link to={"product/"+product.id}>
         <div key={product.id} className="product-card">
+
           <img src={product.image} alt={product.name} className="product-image" />
           <div className="product-info">
             <h3>{product.name}</h3>
             <p>${product.price.toFixed(2)}</p>
           </div>
         </div>
+          </Link>
       ))}
     </div>
   );
