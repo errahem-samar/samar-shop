@@ -15,17 +15,17 @@ import { CartProvider } from './contexts/CartContext';
 function App() {
   return (
     <CartProvider>
-    <Router>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<CategoryList />} />
-        <Route path="/category/:category" element={<SubCategoryList />} />
-        <Route path="/category/:category/:subcategory" element={<ProductList />} /> 
-        <Route path="/category/:category/:subcategory/product/:id" element={<ProductPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/search" element={<SearchPage />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<CategoryList />} />
+          <Route path="/category/:category" element={<SubCategoryList />} />
+          <Route path="/category/:category/:subcategory/:sub_id/" element={<ProductList />} /> 
+          <Route path="/category/:category/:subcategory/product/:id" element={<ProductPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/search" element={<SearchPage />} />
+        </Routes>
+      </Router>
     </CartProvider>
   );
 }

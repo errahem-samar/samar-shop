@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: 100vh; /* Full screen height */
-    width: 100vw;  /* Full screen width */
+    width: 100vw;
     gap: 20px;     /* Add spacing between the subcategory items */
     padding: 20px;
   }

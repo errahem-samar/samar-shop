@@ -1,0 +1,21 @@
+{
+    "products": [
+      { "id": 1, "name": "Running Shoes", "price": 99.99, "image": "/images/shoe1.jpg" },
+      { "id": 2, "name": "Casual Sneakers", "price": 79.99, "image": "/images/shoe2.jpg" },
+      { "id": 3, "name": "Leather Boots", "price": 129.99, "image": "/images/boot1.jpg" },
+      { "id": 4, "name": "Sandals", "price": 49.99, "image": "/images/sandal1.jpg" },
+      { "id": 5, "name": "High Heels", "price": 89.99, "image": "/images/heel1.jpg" },
+      { "id": 6, "name": "Flip Flops", "price": 19.99, "image": "/images/flipflop1.jpg" },
+      { "id": 7, "name": "Trail Shoes", "price": 109.99, "image": "/images/shoe3.jpg" },
+      { "id": 8, "name": "Ankle Boots", "price": 139.99, "image": "/images/boot2.jpg" },
+      { "id": 9, "name": "Slippers", "price": 29.99, "image": "/images/slipper1.jpg" },
+      { "id": 10, "name": "Climbing Shoes", "price": 149.99, "image": "/images/climb1.jpg" },
+      { "id": 11, "name": "Dress Shoes", "price": 119.99, "image": "/images/shoe4.jpg" },
+      { "id": 12, "name": "Loafers", "price": 89.99, "image": "/images/loafer1.jpg" },
+      { "id": 13, "name": "Formal Shoes", "price": 99.99, "image": "/images/formal1.jpg" },
+      { "id": 14, "name": "Boots", "price": 159.99, "image": "/images/boot3.jpg" },
+      { "id": 15, "name": "Espadrilles", "price": 49.99, "image": "/images/espadrille1.jpg" },
+      { "id": 16, "name": "Moccasins", "price": 79.99, "image": "/images/moccasin1.jpg" }
+    ]
+  }
+  

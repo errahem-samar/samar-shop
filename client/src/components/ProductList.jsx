@@ -1,26 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './ProductList.css';
 import { Link, useParams } from 'react-router-dom';
+import productsData from '../data/men-shoes.json';
+import axios from 'axios';
 
 const ProductList = () => {
-  const products = [
-    { id: 1, name: 'Running Shoes', price: 99.99, image: '/images/shoe1.jpg' },
-    { id: 2, name: 'Casual Sneakers', price: 79.99, image: '/images/shoe2.jpg' },
-    { id: 3, name: 'Leather Boots', price: 129.99, image: '/images/boot1.jpg' },
-    { id: 4, name: 'Sandals', price: 49.99, image: '/images/sandal1.jpg' },
-    { id: 5, name: 'High Heels', price: 89.99, image: '/images/heel1.jpg' },
-    { id: 6, name: 'Flip Flops', price: 19.99, image: '/images/flipflop1.jpg' },
-    { id: 7, name: 'Trail Shoes', price: 109.99, image: '/images/shoe3.jpg' },
-    { id: 8, name: 'Ankle Boots', price: 139.99, image: '/images/boot2.jpg' },
-    { id: 9, name: 'Slippers', price: 29.99, image: '/images/slipper1.jpg' },
-    { id: 10, name: 'Climbing Shoes', price: 149.99, image: '/images/climb1.jpg' },
-    { id: 11, name: 'Dress Shoes', price: 119.99, image: '/images/shoe4.jpg' },
-    { id: 12, name: 'Loafers', price: 89.99, image: '/images/loafer1.jpg' },
-    { id: 13, name: 'Formal Shoes', price: 99.99, image: '/images/formal1.jpg' },
-    { id: 14, name: 'Boots', price: 159.99, image: '/images/boot3.jpg' },
-    { id: 15, name: 'Espadrilles', price: 49.99, image: '/images/espadrille1.jpg' },
-    { id: 16, name: 'Moccasins', price: 79.99, image: '/images/moccasin1.jpg' },
-  ];
+// load file -> create products state to contain data
+  const [products, setProducts] = useState(productsData.products)
+  const { category, subcategory, sub_id } = useParams();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch the data from the backend using axios
+        const response = await axios.get(`http://127.0.0.1:8000/api/category/${sub_id}/products/`);
+        console.log(response.data)
+        setProducts(response.data)
+      } catch (err) {
+        // setError('Error fetching data');
+        console.error(err);
+      } finally {
+        // setLoading(false);
+      }
+  };
+
+  fetchData();
+  },[]);
 
   return (
     <div className="product-grid">
@@ -31,7 +35,7 @@ const ProductList = () => {
           <img src={product.image} alt={product.name} className="product-image" />
           <div className="product-info">
             <h3>{product.name}</h3>
-            <p>${product.price.toFixed(2)}</p>
+            <p>${parseFloat(product.price).toFixed(2)}</p>
           </div>
         </div>
           </Link>
