@@ -29,7 +29,7 @@ class Category(MPTTModel):
             super().save(*args, **kwargs)
             self.image = saved_image
         else:
-            old_instance = Product.objects.get(pk=self.pk)
+            old_instance = Category.objects.get(pk=self.pk)
             old_image = old_instance.image
             old_image_path = old_image.path
             if old_image and old_image.name != 'categories/default.jpg':
