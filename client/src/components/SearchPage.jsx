@@ -1,31 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SearchPage.css';
+import axios from 'axios';
 
 const SearchPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
+  const [imageFile, setImageFile] = useState(null); // To store the actual file for upload
 
-  // Simulate similar products data (this would be fetched from an API in a real app)
-  const allProducts = [
-    { id: 1, name: 'Running Shoes', price: 99.99, image: '/images/shoe1.jpg' },
-    { id: 2, name: 'Casual Sneakers', price: 79.99, image: '/images/shoe2.jpg' },
-    { id: 3, name: 'Leather Boots', price: 129.99, image: '/images/boot1.jpg' },
-    { id: 4, name: 'Sandals', price: 49.99, image: '/images/sandal1.jpg' },
-    // More products...
-  ];
-
-  // Handle image upload
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file));
-
-      // Simulate search for similar products
-      // In real app, you would send the file to the backend for processing
-      const similar = allProducts.slice(0, 4); // Example: return first 4 products as similar
-      setSimilarProducts(similar);
+      setImageFile(file); // Store the actual file for upload
+      setSelectedImage(URL.createObjectURL(file)); // For preview purposes
     }
   };
+
+  useEffect(() => {
+    const fetchSimilarProducts = async () => {
+      if (!imageFile) return;
+
+      const formData = new FormData();
+      formData.append('image', imageFile); // Append the file to FormData
+
+      try {
+        const response = await axios.post(`http://127.0.0.1:8000/model-api/similar-products/`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+        console.error(response.data);
+        setSimilarProducts(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchSimilarProducts();
+  }, [imageFile]);
 
   return (
     <div className="search-page">
@@ -50,7 +60,7 @@ const SearchPage = () => {
                 <img src={product.image} alt={product.name} className="product-image" />
                 <div className="product-info">
                   <h3>{product.name}</h3>
-                  <p>${product.price.toFixed(2)}</p>
+                  <p>${parseFloat(product.price).toFixed(2)}</p>
                 </div>
               </div>
             ))}
