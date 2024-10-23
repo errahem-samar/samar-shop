@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { FaShoppingCart, FaSearch, FaArrowLeft } from 'react-icons/fa';
+import {CiShop } from 'react-icons/ci';
 import { CartContext } from '../contexts/CartContext';
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
 
         {/* Logo */}
         <Link to="/" className="logo">
-          SAMAR SHOP
+          <CiShop />
         </Link>
 
         {/* Search Button */}

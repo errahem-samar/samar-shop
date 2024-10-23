@@ -81,6 +81,4 @@ class SimilarProductsView(APIView):
         distances, indices = nearest_neighbours.kneighbors(new_image_embedding.reshape(1, -1))
         product_ids = data_df.iloc[indices[0]]['id'].values  # Adjust as necessary based on your DataFrame structure
         return product_ids
-        # print(indices)
-        # return [1573, 1596]
         return indices[0]
