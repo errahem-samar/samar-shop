@@ -37,11 +37,15 @@ const CategoryList = () => {
 
   return (
     <div className="category-grid">
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         // ! category.parent ?
-          category.level == 0 ?
-          <CategoryCard category={category} path = {`category/${category.name}`} />:
-          <></>
+          category.level === 0 ?
+          <CategoryCard  key={category.id || `category-${index}`}  category={category} path = {`category/${category.name}`} />:
+          (
+            <React.Fragment key={`empty-${index}`}> {/* Key for the empty fragment */}
+              <></>
+            </React.Fragment>
+          )
       ))}
     </div>
   );

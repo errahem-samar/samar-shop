@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, {useEffect, useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import CategoryCard from './CategoryCard';
@@ -13,11 +13,10 @@ const SubCategoryList = () => {
     ]
   )
   const { category } = useParams();
+  const firstRender = useRef(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      // setLoading(true);
-      // setError(null);
       try {
         // Fetch the data from the backend using axios
         const response = await axios.get(`http://127.0.0.1:8000/api/catergories/`);
@@ -30,7 +29,10 @@ const SubCategoryList = () => {
         // setLoading(false);
       }
   };
-  fetchData();
+  if (firstRender.current) {
+    firstRender.current = false;
+    fetchData(); // Run fetch only on the first render
+  }
   },[]);
 
 
@@ -57,11 +59,14 @@ const SubCategoryList = () => {
 
   return (
     <div className="subcategory-grid">
-      {subCategories.map((subcategory) => (
+      {subCategories.map((subcategory, index) => (
         subcategory.parent && subcategory.parent.name == category? 
-        <CategoryCard category={subcategory} path = {`/category/${category}/${subcategory.name}/${subcategory.id}`} />
-        :
-        <></>
+        <CategoryCard key={category.id || `category-${index}`}  category={subcategory} path = {`/category/${category}/${subcategory.name}/${subcategory.id}`} />:
+        (
+          <React.Fragment key={`empty-${index}`}> {/* Key for the empty fragment */}
+            <></>
+          </React.Fragment>
+        )
       ))}
     </div>
   );

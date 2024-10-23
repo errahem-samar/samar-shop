@@ -14,7 +14,7 @@ const CategoryCard = ({category, path}) => {
         // </Link>
         // </div>
         <div 
-        key={category.name} 
+        // key={category.id} 
         className="subcategory-item"
         // http://localhost:8000/media/${product.image}
         style={{
