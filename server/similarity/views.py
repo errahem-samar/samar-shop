@@ -38,11 +38,11 @@ class SimilarProductsView(APIView):
             # similar_products_ids = self.get_similar_products(img)
             # similar_products_ids = [1573, 1596]
             similar_products_ids = self.find_similar_images(image)
-            print(similar_products_ids)
+            # print(similar_products_ids)
             
             # Query the products based on the model's output
             similar_products = Product.objects.filter(id__in=similar_products_ids)
-            print(similar_products)
+            # print(similar_products)
             
             # response_data = [{'id': product.id, 'name': product.name} for product in similar_products]
             # return Response(response_data, status=status.HTTP_200_OK)
